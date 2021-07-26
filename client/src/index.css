@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/*App*/
+.App {
+  display: flex;
+  flex-direction: column;
+  background: #ECE9E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100vh;
+}
+
+/*Header*/
+header {
+  display: flex;
+  position: absolute;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 25px;
+}
+
+.vault {
+  background: -webkit-linear-gradient( 92deg, #95d7e3, #eb76ff );
+  background-size:600vw 600vw;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textAnimate 5s linear infinite alternate;
+}
+
+@keyframes textAnimate {
+  from {
+    filter: hue-rotate(0deg);
+    background-position-x: 0%;
+    
+  }
+  to {
+    filter: hue-rotate(360deg);
+    background-position-x: 600vw;
+    
+  }
+}
+
+/*Clip player*/
+#clip-main {
+  display: flex;
+  flex-direction: column;
+  margin: auto auto; /*Centrar el reproductor*/
+  padding: 4px;
+  background: #ECE9E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+#clip-player {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+#clip-main iframe {
+  transition: 0.3s;
+  border-radius: 10px;
+  
+}
+
+#clip-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+#clip-info h1 {
+  background-color: #FFEB4D;
+  padding: 2px 6px;
+  border-radius: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 622px;
+}
+
+#clip-info p, b {
+  padding-left: 6px;
+}
+
+.slug {
+  font-style: italic;
+  color: gray;
+  font-size: 10px;
+  text-align: center;
+}
+
+#clip-info b img {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+.clip-size-buttons {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.clip-remote {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.clip-remote button, .clip-size-buttons button, .navButton {
+  background: none;
+  border: none;
+  background: #ECE9E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 100%;
+  padding: 10px 12px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.navButton {
+  border-radius: 10px;
+}
+
+/*Form*/
+#addClip-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: hsla(0, 0%, 44%, 0.75);
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+}
+
+#addClip {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: floralwhite;
+  width: 320px;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  border-radius: 10px;
+}
+
+#addClip form {
+  margin-bottom: 10px;
+}
+
+#addClip div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#addClip strong {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+#addClip button {
+  width: 100%;
+}
+
+p.left {
+  text-align: left;
+  margin: 5px 0 0 5px;
+  word-wrap: break-word;
+}
+
+b.slug.left {
+  margin-top: 10px;
+  text-align: left;
+  padding-left: 0;
+}
+
+.closeForm {
+  position: absolute;
+  right: -12px;
+  top: -12px;
+  background-color: none;
+  border: none;
+  width: auto !important;
+  padding: 4px 6px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+#notification {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  text-align: center;
+  padding: 10px 0;
+}
+
+#notification button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.success {
+  background-color: #468966;
+}
+
+.error {
+  background-color: #D90B1C;
+}
